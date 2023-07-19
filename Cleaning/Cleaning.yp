@@ -1112,9 +1112,52 @@
     <flowElements xsi:type="yest:SequenceFlow" id="7rZp11GwalKKObPHMMw8nXyla8hfhoUk" name="" target="TN0vhyCNymmlfnJTq0WLzlP7WjDajeTh" source="AgzHzko3xZaLgnfHH9LT0rwAHUVL3Rcu"/>
     <flowElements xsi:type="yest:CallActivity" id="u9ShChlOOSLXnRHl1XhAJQfm3I25v9oZ" name="Start mandatory rinse" incomings="BGF5fRtRYGke86kiSDvC9pzYK3S05S3g" outgoings="u6uSbPeDef3PLlI4zgZXOtaGLFRZWfGr" subWorkflow="0meHHFVWDogcyXzpdZwtNWuGgKdz97ME"/>
     <flowElements xsi:type="yest:SequenceFlow" id="BGF5fRtRYGke86kiSDvC9pzYK3S05S3g" name="Yes" target="u9ShChlOOSLXnRHl1XhAJQfm3I25v9oZ" source="TN0vhyCNymmlfnJTq0WLzlP7WjDajeTh"/>
-    <flowElements xsi:type="yest:Task" id="Y4wZwaRkYJ4HEjjvhe4nPkIYQB7RrZ0n" name="Remove suction rods" incomings="u6uSbPeDef3PLlI4zgZXOtaGLFRZWfGr" outgoings="t0WULNyMtM1v89uAqtrYU4eR3gxTAy9V"/>
+    <flowElements xsi:type="yest:Task" id="Y4wZwaRkYJ4HEjjvhe4nPkIYQB7RrZ0n" name="Remove suction rods" incomings="u6uSbPeDef3PLlI4zgZXOtaGLFRZWfGr" outgoings="t0WULNyMtM1v89uAqtrYU4eR3gxTAy9V">
+      <table>
+        <columns xsi:type="yest:OperationColumn" id="5mrPXipsDfvB9SqN4OAb4kT1JM35xWdO"/>
+        <decisions id="nHDUKXY023bEnKLtEjNoACLyJ2Ih4fTj">
+          <cells key="5mrPXipsDfvB9SqN4OAb4kT1JM35xWdO">
+            <value xsi:type="yest:OperationCell">
+              <operations reference="qJAy75lBhJDMhXmeWO6ixA6M6HSAFne1"/>
+            </value>
+          </cells>
+        </decisions>
+      </table>
+    </flowElements>
     <flowElements xsi:type="yest:SequenceFlow" id="u6uSbPeDef3PLlI4zgZXOtaGLFRZWfGr" name="" target="Y4wZwaRkYJ4HEjjvhe4nPkIYQB7RrZ0n" source="u9ShChlOOSLXnRHl1XhAJQfm3I25v9oZ"/>
-    <flowElements xsi:type="yest:ChoicePoint" id="PeW2L886GDYcQFpaJREjGLFL4UQhZcDL" name="Is alarm visible?" incomings="t0WULNyMtM1v89uAqtrYU4eR3gxTAy9V" outgoings="LyRwQCBe04INzYHTBTawxySJGFqtmq75 ZAC87jC2Wgo7lIsTe11BGGjEsCvL3O77"/>
+    <flowElements xsi:type="yest:ChoicePoint" id="PeW2L886GDYcQFpaJREjGLFL4UQhZcDL" name="Is alarm visible?" incomings="t0WULNyMtM1v89uAqtrYU4eR3gxTAy9V" outgoings="LyRwQCBe04INzYHTBTawxySJGFqtmq75 ZAC87jC2Wgo7lIsTe11BGGjEsCvL3O77">
+      <table>
+        <columns xsi:type="yest:OperationColumn" id="HiTlaNPI3h8Tl3lrBR945SA16DlMmxgi"/>
+        <columns xsi:type="yest:OutcomeColumn" id="3hhYxcJzbfkU4YcXFUStw9ga08Gfuctt"/>
+        <columns xsi:type="yest:CriterionColumn" id="3xIWQrpLWmwtXgk2DTOYpSCqErVbvvPQ" criterionType="#objective"/>
+        <decisions id="jOMcyviS2aR4kuP2UvKrPMkt8XbMz6RQ">
+          <cells key="HiTlaNPI3h8Tl3lrBR945SA16DlMmxgi">
+            <value xsi:type="yest:OperationCell">
+              <operations reference="b8oKufqFHFXvKEzkMvLBLNyXWJMubxRF"/>
+            </value>
+          </cells>
+          <cells key="3hhYxcJzbfkU4YcXFUStw9ga08Gfuctt">
+            <value xsi:type="yest:OutcomeCell" outcome="KmGDRWr55A488aGvej7iTrLx05iLFUTd"/>
+          </cells>
+          <cells key="3xIWQrpLWmwtXgk2DTOYpSCqErVbvvPQ">
+            <value xsi:type="yest:StringCell" value="alarm"/>
+          </cells>
+        </decisions>
+        <decisions id="L0tUtCY1b85lVeeTfYofYfb3uCLRRjS8">
+          <cells key="HiTlaNPI3h8Tl3lrBR945SA16DlMmxgi">
+            <value xsi:type="yest:OperationCell">
+              <operations reference="oyn5WSA3glLOheoeJRdkOi9nXEIZzQ5l"/>
+            </value>
+          </cells>
+          <cells key="3hhYxcJzbfkU4YcXFUStw9ga08Gfuctt">
+            <value xsi:type="yest:OutcomeCell" outcome="qiCarzRO65426MwMteVPppq7a3aP6TBx"/>
+          </cells>
+          <cells key="3xIWQrpLWmwtXgk2DTOYpSCqErVbvvPQ">
+            <value xsi:type="yest:StringCell" value="no alarm"/>
+          </cells>
+        </decisions>
+      </table>
+    </flowElements>
     <flowElements xsi:type="yest:SequenceFlow" id="t0WULNyMtM1v89uAqtrYU4eR3gxTAy9V" name="" target="PeW2L886GDYcQFpaJREjGLFL4UQhZcDL" source="Y4wZwaRkYJ4HEjjvhe4nPkIYQB7RrZ0n"/>
     <flowElements xsi:type="yest:EndPoint" id="qiCarzRO65426MwMteVPppq7a3aP6TBx" name="" incomings="LyRwQCBe04INzYHTBTawxySJGFqtmq75"/>
     <flowElements xsi:type="yest:SequenceFlow" id="LyRwQCBe04INzYHTBTawxySJGFqtmq75" name="No" target="qiCarzRO65426MwMteVPppq7a3aP6TBx" source="PeW2L886GDYcQFpaJREjGLFL4UQhZcDL"/>
@@ -2081,6 +2124,34 @@
       <colors red="239" green="126" blue="138"/>
       <fonts name="Segoe UI" size="9"/>
     </diagram>
+  </testElements>
+  <testElements xsi:type="yest:TestOperation" id="b8oKufqFHFXvKEzkMvLBLNyXWJMubxRF">
+    <highLevelStep>
+      <action>
+        <stepElements xsi:type="yest:StepText" content="check alarm exist"/>
+      </action>
+      <expectedResult>
+        <stepElements xsi:type="yest:StepText" content="alarm visible (UI)"/>
+      </expectedResult>
+    </highLevelStep>
+  </testElements>
+  <testElements xsi:type="yest:TestOperation" id="oyn5WSA3glLOheoeJRdkOi9nXEIZzQ5l">
+    <highLevelStep>
+      <action>
+        <stepElements xsi:type="yest:StepText" content="check alarm exist"/>
+      </action>
+      <expectedResult>
+        <stepElements xsi:type="yest:StepText" content="alarm not visible (UI)"/>
+      </expectedResult>
+    </highLevelStep>
+  </testElements>
+  <testElements xsi:type="yest:TestOperation" id="qJAy75lBhJDMhXmeWO6ixA6M6HSAFne1">
+    <highLevelStep>
+      <action>
+        <stepElements xsi:type="yest:StepText" content="Remove suction rods"/>
+      </action>
+      <expectedResult/>
+    </highLevelStep>
   </testElements>
   <designDataDictionary id="v0ekJcgUjhtvL1QmOItxThgSD3AmZTrl" name="#designDataDictionary">
     <datas xsi:type="yest:DesignData" name="CleaningProgram" id="qJRMdYqwYJRMcjiViw3IqoaYyRaDcRJV">
